@@ -1,0 +1,424 @@
+body {
+    font-family: "Red Hat Display", sans-serif;
+    margin: 0; 
+    padding: 0;
+    background: #A64149;
+    background: linear-gradient(155deg, rgba(166, 65, 73, 0.19) 0%, rgba(242, 219, 187, 1) 69%, rgba(217, 217, 217, 1) 100%);
+    }
+body.loaded .mainContent {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+body.loaded .logo {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+body.loaded .arrow {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+#main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; 
+}
+#navBar {
+    width: 100%;
+    height: auto;
+    background-color: rgb(61, 60, 64, 0); /* Slightly transparent background */
+    color: #3D3C40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    font-size: 4vh;
+    font-weight:520;
+}
+
+.logo {
+    font-size: 5vh;
+    font-weight: bolder;
+    font-family: "Dancing Script", cursive;
+    color: #A64149;
+    text-shadow: #A64149;
+
+    transform: translateY(20px); 
+    transition: opacity 2s ease, transform 2s ease; 
+}
+
+.menu-icon {
+    display: none; /* Hidden by default */
+    font-size: 3vh;
+    cursor: pointer;
+    color:#A64149;
+}
+
+.navItems {
+    display: flex;
+    gap: 2.252vh;
+}
+
+.navItems a {
+    text-decoration: none;
+    color: inherit;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navItems a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #D9525E;
+}
+
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .navItems {
+        display: none; 
+        flex-direction: column; 
+        gap: 15px;
+        width: 100%; 
+        background-color: rgb(217, 82, 94); 
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(241, 241, 241, 0.1);
+        color: white;
+    }
+
+    .navItems a {
+        padding: 10px 20px;
+        font-size: 2.5vh;
+        text-align: left;
+        font-family:"Red Hat Display", sans-serif; 
+    }
+
+    .navItems.show {
+        display: flex; 
+    }
+}
+
+
+
+
+#main {
+    margin: 0; 
+    padding: 0;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+   
+}
+
+
+.mainContent {
+    position: absolute;
+    z-index: 2;
+    color: #3D3C40;
+    padding: 20px;
+    
+    border-radius: 8px; 
+    font-size: x-large;
+    opacity: 0; 
+    text-align: center;
+    transform: translateY(20px); 
+    transition: opacity 2s ease, transform 2s ease; 
+    
+}
+
+
+@keyframes slideInRight {
+    0% {
+        right: -100%; /* Start off-screen to the right */
+    }
+    100% {
+        right: 30%; /* End at its normal position */
+    }
+}
+
+/* Animation for sliding the second image in from the left */
+@keyframes slideInLeft {
+    0% {
+        left: -100%; /* Start off-screen to the left */
+    }
+    100% {
+        left: 30%; /* End at its normal position */
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .mainContent {
+        font-size: medium; /* Adjust font size for smaller screens */
+        padding: 15px;
+    }
+
+    .mainImage, .mainImage2 {
+        animation: slideInRight 2s ease-in-out forwards; /* Keep the animation */
+        z-index: -1; /* Ensure the images are behind the text */
+    }
+}
+
+.mainImage{
+    position: absolute;
+    top: 15%;
+    right: -100%;
+   right: 27%;
+    bottom:15% ;
+    height: 70vh;
+    z-index: 1;
+    object-fit: cover; /* Ensure the image scales properly */
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); /* Horizontal fade */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); /* For WebKit browsers */
+    animation: slideInRight 2s ease-in-out forwards; 
+
+}
+
+.mainImage2{
+    position: absolute;
+    top: 15%;
+    left: -100%;
+   left: 28%;
+    bottom:15% ;
+    height: 70vh;
+    z-index: 1;
+    object-fit: cover; /* Ensure the image scales properly */
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); /* Horizontal fade */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent); /* For WebKit browsers */
+    animation: slideInLeft 2s ease-in-out forwards; 
+
+}
+.newP{
+    position: absolute; 
+    bottom: 5vh; 
+    left: 5vh; 
+    font-size: 4vh; 
+    font-weight: bolder;
+    color: #18130f;
+    font-family: "Dancing Script", cursive;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    
+}
+
+.arrow{
+    position: absolute; 
+    bottom: -2.25vh;
+    left: 33vh; 
+    font-size: 7vh; 
+    color: #A64149;
+    font-family: "Dancing Script", cursive;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    transform: rotate(180deg);
+    transition: transform 2s ease-in-out;
+    
+}
+
+
+.sectionA, .sectionB{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%; 
+    height: auto; 
+    margin: 20px auto; 
+    box-sizing: border-box; 
+    border-radius: 8vh; 
+    object-fit: cover;
+    background-color: #e7b9dd;
+    color: #3D3C40;
+    padding: 20px;
+    font-size: 4vh;
+    font-weight: 520;
+    text-align: center;
+}
+
+.sectionA:hover, .sectionB:hover{
+    background-color: #f390c6;
+    color: #3D3C40;
+    font-size: 4vh;
+    font-weight: 520;
+    padding: 20px;
+    border-radius: 8vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+
+.myImage{
+    width: 40vh;
+    height: auto;
+    object-fit: cover; 
+    height: auto;
+    display: block;
+    border-radius: 5vh;
+   
+}
+
+
+
+.projectsImage{
+    width: 50vh;
+    object-fit: cover; 
+    height: auto;
+    display: block;
+    
+    
+}
+
+.socialImage{
+    margin-right: 2vh;
+    object-fit: cover;
+    height: auto;
+    display: block;
+   
+}
+
+
+
+
+.sectionC {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%; 
+    height: auto; 
+    margin: 20px auto; 
+    box-sizing: border-box; 
+    border-radius: 8vh; 
+    object-fit: cover;
+    background-color: #e7b9dd;
+    color: #3D3C40;
+    padding: 20px;
+    font-size: 4vh;
+    font-weight: 520;
+    text-align: center;
+}
+
+.sectionC:hover{
+    background-color: #f390c6;
+    color: #3D3C40;
+    font-size: 4vh;
+    font-weight: 520;
+    padding: 20px;
+    border-radius: 8vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer; 
+}
+
+
+
+#footer{
+       display: flex; 
+        align-items: center; 
+        justify-content: center;
+        text-decoration: none;
+    }
+
+
+    #footer a {
+        text-decoration: none; 
+        color: #3D3C40; 
+        font-size: 3vh; 
+        margin: 0 15px; 
+        transition: color 0.3s ease; 
+    }
+    
+    #footer a:hover {
+        color: #A64149; 
+    } 
+    
+    
+  h1{
+    color: black;
+    text-shadow: #A64149 0 0 10px;
+  } 
+  
+  
+  @media (max-width: 768px) {
+    .sectionA, .sectionB, .sectionC {
+        flex-direction: column;
+        align-items: center;
+       
+    }
+
+    .myImage, .projectsImage, .socialImage {
+        width: 90%; 
+        margin: 10px auto; 
+
+    }
+}
+
+
+@media (max-width: 480px) {
+    .sectionA, .sectionB, .sectionC {
+        flex-direction: column; 
+        align-items: center;
+       margin: 0 auto;
+        gap: 10px;
+    }
+
+    .myImage, .projectsImage, .socialImage {
+        width: 100%; 
+        margin: 0px auto; 
+    }
+
+   
+
+    .sectionA h1, .sectionB h1, .sectionC h1 {
+        text-align: center; 
+        font-size: 4vh;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #footer {
+      
+        gap: 10px; 
+    }
+
+    #footer a {
+        font-size: 3vh; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    #footer {
+       
+        gap: 3px; 
+    }
+
+    #footer a {
+        font-size: 3vh;
+    }
+}
+
+
+
+
+

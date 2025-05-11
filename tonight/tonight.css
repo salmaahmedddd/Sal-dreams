@@ -1,0 +1,758 @@
+body{
+    background-color: #deccf7;
+    font-family: "Quicksand", sans-serif;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+body.loaded .logo {
+    opacity: 1; 
+    transform: translateY(0);}
+
+#navBar {
+    width: 100%;
+    height: auto;
+    background-color: rgb(61, 60, 64, 0);
+    color: #3D3C40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    font-size: 4vh;
+    font-weight:520;
+}
+
+
+#navBar.fixed {
+    position: fixed; /* Switch to fixed position */
+    background-color: rgba(61, 60, 64, 0); /* Solid background when fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+
+
+
+.logo {
+    font-size: 5vh;
+    font-weight: bolder;
+    font-family: "Dancing Script", cursive;
+    color: #A64149;
+    text-shadow: #A64149;
+    transform: translateY(20px); 
+    transition: opacity 2s ease, transform 2s ease; 
+}
+
+.menu-icon {
+    display: none; /* Hidden by default */
+    font-size: 3vh;
+    cursor: pointer;
+    color:#A64149;
+}
+
+.navItems {
+    display: flex;
+    gap: 2.252vh;
+}
+
+.navItems a {
+    text-decoration: none;
+    color: inherit;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navItems a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #D9525E;
+}
+
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .navItems {
+        display: none; 
+        flex-direction: column; 
+        gap: 15px;
+        width: 100%; 
+        background-color: rgb(217, 82, 94); 
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navItems a {
+        padding: 10px 20px;
+        font-size: 2.5vh;
+        text-align: left;
+        font-family:"archivo", sans-serif; 
+        color: #FAE5E3;
+    }
+
+    .navItems.show {
+        display: flex; 
+    }
+}
+
+.headerImage{
+    width: 100%;
+    
+}
+
+@media (max-width: 768px) {
+    .headerImage {
+        width: 100%; 
+        height: auto; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .headerImage {
+        width: 100%; 
+        height: auto; 
+    }
+}
+
+
+h1{
+    font-size: 5vh;
+    color: #BE307F;
+    text-shadow: #FAE5E3 0 0 10px;
+    text-transform: uppercase;
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 10px 20px
+}
+
+h2{
+    font-size: 4vh;
+    color: #BE307F;
+    text-shadow: #FAE5E3 0 0 10px;
+    text-transform: uppercase;
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 10px 20px
+}
+
+
+.overview{
+    font-size: 3vh;
+    margin: 2vh;
+    text-align: justify
+}
+
+.role, .target{
+    font-size: 3vh;
+    margin: 2vh;
+    text-align: justify;
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+}
+
+.challenges{
+    font-size: 3vh;
+    margin: 2vh;
+    text-align: justify;
+    font-family: "Archivo", sans-serif;
+    line-height: 5vh;
+    background-color: #D9BBB9;
+}
+
+.research{
+    margin: 20px;
+}
+
+.researchText{
+    font-size: 3vh;
+    margin: 2vh;
+    text-align: justify;
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    line-height: 5vh;
+}
+
+.painPointsImage{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5vh;
+    margin: 0 auto;
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.8s ease, transform 0.8s ease; 
+}
+.painPointsImage.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+} 
+
+
+
+.competitiveAuditImage{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5vh;
+    margin: 0 auto;
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.8s ease, transform 0.8s ease; 
+}
+.competitiveAuditImage.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}     
+
+
+
+.keyList{
+    font-size: 3vh;
+    margin: 2vh;
+    text-align: justify;
+    font-family: "Archivo", sans-serif;
+    background-color: rgb(217, 187, 185, 0.5);
+    line-height: 5vh;
+}
+
+.personaImgs{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    margin: 20px auto; 
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.personaImage1 , .personaImage2, .personaImage3{
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    width: 80%; 
+    height: auto; 
+    margin: 20px auto; 
+    object-fit: cover;
+    box-sizing: border-box; 
+    background-color: rgba(166, 65, 73, 0.1);
+    border-radius: 8px; 
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.8s ease, transform 0.8s ease; 
+}
+
+.personaImage1.visible, .personaImage2.visible, .personaImage3.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.problemList{
+    font-size: 3vh;
+    margin: 2vh;
+    text-align: justify;
+    font-family: "Archivo", sans-serif;
+    line-height: 5vh;
+}
+
+.problemStatement{
+    background-color: rgb(217, 187, 185, 0.5);
+}
+
+.userJourneyImgs{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    margin: 20px auto; 
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.userJourney1, .userJourney2, .userJourney3{
+    display: flex;
+        align-items: center; 
+        justify-content: center; 
+        width: 90%; 
+        height: auto; 
+        margin: 20px auto; 
+        box-sizing: border-box;
+        object-fit: cover; 
+        background-color: rgba(166, 65, 73, 0.1);
+        border-radius: 8px; 
+        opacity: 0;
+        transform: translateY(20px); 
+        transition: opacity 0.8s ease, transform 0.8s ease; 
+}
+
+.userJourney1.visible, .userJourney2.visible, .userJourney3.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.ideation{
+    margin: 3vh;
+}
+
+.ideationList{
+    font-size: 3vh;
+    margin: 2vh;
+    text-align: justify;
+    font-family: "Archivo", sans-serif;
+    line-height: 5vh;
+}  
+
+.ideationList p{
+    font-weight: bold;
+    color: #BE307F;
+}
+
+.informationArchitectureImage{
+    width: 90vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 5vh;
+    margin: 20px auto;
+    object-fit: cover;
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.8s ease, transform 0.8s ease; 
+}
+.informationArchitectureImage.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.wireframeImgs{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    margin: 20px auto; 
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.wireframeImg1, .wireframeImg2, .wireframeImg3, .wireframeImg4, .wireframeImg5, .wireframeImg6, .wireframeImg7, .wireframeImg8, .wireframeImg9, .wireframeImg10{
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    width: 20%; 
+    height: auto; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+    background-color: rgba(166, 65, 73, 0.1);
+    border-radius: 8px; 
+    object-fit: cover;
+} 
+
+.digitalwireframe{
+    width: 100%; 
+    height: auto; 
+    display: block;
+    margin: 20px auto; 
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.lofiPrototype{
+    height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 5vh;
+        margin: 0 auto;    
+    }
+
+
+
+
+.problem1, .problem2, .problem3, .problem4, .problem5, .problem6, .problem7{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; 
+    height: auto; 
+    margin: 20px auto; 
+    box-sizing: border-box; 
+    border-radius: 8px; 
+    object-fit: cover;}
+
+    .questionA, .questionB, .questionC, .questionD, .questionF, .questionG{
+        width: 40%;
+        height: auto;}
+.questionE{
+    width: 35%;
+    height: auto;
+}    
+    .mockup1 , .mockup2, .mockup3,.mockup6, .mockup7{
+        width: 40%;
+        height: auto;
+    }
+
+  .mockup4{
+    width: 35%;
+        height: auto;
+    };
+
+   .mockup5{
+    width: 30%;
+    height: 90vh;
+   } 
+   
+
+    .designSystemImage{
+        width: 90vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 5vh;
+        margin: 20px auto;
+        object-fit: cover;
+        opacity: 0; 
+        transform: translateY(20px); 
+        transition: opacity 0.8s ease, transform 0.8s ease; 
+    }
+    .designSystemImage.visible {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+
+
+    .footer{
+        font-size: 5vh;
+        align-self: center;
+        padding: 10px;
+       }
+
+     .test{
+        margin: 3vh;
+     }  
+
+     .testGoals{
+        font-size: 3vh;
+        text-align: left;
+        padding: 10px;
+        line-height: 5vh;
+        background-color: rgb(75, 63, 62, 0.3);
+    }
+
+    .methodologyImage{
+        width: 90vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 5vh;
+        margin: 20px auto;
+        object-fit: cover;
+        opacity: 0; 
+        transform: translateY(20px); 
+        transition: opacity 0.8s ease, transform 0.8s ease; 
+    }
+    .methodologyImage.visible {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+
+    .insight{
+        font-size: 3vh;
+        text-align: left;
+        padding: 10px;
+        line-height: 5vh;
+    }
+
+    table{
+        margin: 2vh;
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #000;
+       background-color:  rgb(75, 63, 62, 0.3);
+    }
+    th, td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: left;
+        font-size: 3vh;
+    }
+
+    .nextSteps p{
+        font-weight: bold;
+        margin: 3vh;
+        font-size: 4vh;
+    }
+
+    .nextStepsList{
+        font-size: 3vh;
+        margin: 2vh;
+        text-align: justify;
+        font-family: "Archivo", sans-serif;
+        line-height: 5vh;
+    }
+
+    .conclusion{
+        font-size: 3vh;
+        text-align: justify;
+        font-family: "Archivo", sans-serif;
+        line-height: 5vh;
+        background-color:  rgb(75, 63, 62, 0.3);
+        padding: 10px;
+    }
+    
+    
+    @media (max-width: 768px) {
+        .designSystem {
+            width: 90vw;
+        }
+    }
+    
+    
+    @media (max-width: 480px) {
+        .designSystem {
+            width: 95vw; 
+        }
+    }
+
+
+    
+
+@media (max-width: 768px) {
+    .overview, .role, .target {
+        font-size: 2.5vh; 
+        line-height: 3.5vh; 
+        width: 90%; 
+        padding: 15px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .overview, .role, .target, .ideationList {
+        font-size: 2vh; 
+        line-height: 3vh;
+        width: 95%; 
+        padding: 10px;
+    }
+}  
+
+
+
+@media (max-width: 768px) {
+    .personaImg, .problemImage, .userJourneyImg, .informationImage, .painPointsImage, .competitiveAuditImage {
+        width: 90%;
+        margin: 15px auto; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .personaImg, .problemImage, .userJourneyImg, .ideationImg, .informationImage {
+        width: 100%; 
+        margin: 10px auto; 
+    }
+}
+
+@media (max-width: 768px) {
+    .userJourneyImage1, .userJourneyImage2, .persona11, .persona22 {
+        width: 90%;
+        margin: 15px auto;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .userJourneyImage1, .userJourneyImage2, .persona11, .persona22 {
+        width: 100%; 
+        margin: 10px auto; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .wireframeImg1, .wireframeImg2, .wireframeImg3, 
+    .wireframeImg4, .wireframeImg5, .wireframeImg6, 
+    .wireframeImg7, .wireframeImg8, .wireframeImg9 {
+        width: 90%; 
+        margin: 15px auto; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .wireframeImage1, .wireframeImage2, .wireframeImage3, 
+    .wireframeImage4, .wireframeImage5, .wireframeImage6, 
+    .wireframeImage7, .wireframeImage8, .wireframeImage9 {
+        width: 100%; 
+        margin: 10px auto; 
+    }
+}
+
+@media (max-width: 768px) {
+    .digitalWireframeImage {
+        width: 90%; 
+        margin: 15px auto; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .digitalWireframeImage {
+        width: 100%; 
+        margin: 10px auto; 
+    }
+}
+
+@media (max-width: 768px) {
+    .problem1, .problem2, .problem3, .problem4, .problem5, .problem6, .problem7 {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .problem1, .problem2, .problem3, .problem4, .problem5, .problem6, .problem7 {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .questionA, .questionB, .questionC, .questionD, .questionE, .questionF, .questionG {
+        width: 45%;
+        margin: 15px auto; 
+        font-size: 2.5vh; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .questionA, .questionB, .questionC, .questionD, .questionE, .questionF, .questionG {
+        width: 90%; 
+        margin: 10px auto; 
+        font-size: 2vh; 
+    }
+}
+
+@media (max-width: 768px) {
+    .mockup1, .mockup2, .mockup3, .mockup4, .mockup5, .mockup6, .mockup7, .lofiPrototype {
+        width: 45%;
+        margin: 15px auto; 
+        font-size: 2.5vh; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .mockup1, .mockup2, .mockup3, .mockup4, .mockup5, .mockup6, .mockup7, .lofiPrototype{
+        width: 90%; 
+        margin: 10px auto;
+        font-size: 2vh; 
+    }
+}
+
+@media (max-width: 768px) {
+    .methodologyImage, .designSystemImage {
+        width: 90%; 
+        margin: 15px auto;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .methodologyImage, .designSystemImage {
+        width: 100%; 
+        margin: 10px auto; 
+    }
+}
+
+@media (max-width: 768px) {
+    table {
+        display: block; 
+        overflow-x: auto; 
+        white-space: nowrap;
+    }
+
+    th, td {
+        font-size: 1.4rem; 
+        padding: 8px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    th, td {
+        font-size: 1.2rem; 
+        padding: 6px; 
+    }
+}
+
+#footer{
+    display: flex; 
+     align-items: center; 
+     justify-content: center;
+     text-decoration: none;
+     padding: 20px;
+ }
+
+
+ #footer a {
+     text-decoration: none; 
+     color: #3D3C40; 
+     font-size: 3vh; 
+     margin: 0 15px; 
+     transition: color 0.3s ease; 
+ }
+ 
+ #footer a:hover {
+     color: #A64149; 
+ } 
+
+ @media (max-width: 768px) {
+    #footer {
+      
+        gap: 10px; 
+    }
+
+    #footer a {
+        font-size: 3vh; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    #footer {
+       
+        gap: 3px; 
+    }
+
+    #footer a {
+        font-size: 3vh;
+    }
+}
+  
