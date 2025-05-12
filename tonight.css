@@ -594,7 +594,7 @@ h2{
 @media (max-width: 768px) {
     .wireframeImg1, .wireframeImg2, .wireframeImg3, 
     .wireframeImg4, .wireframeImg5, .wireframeImg6, 
-    .wireframeImg7, .wireframeImg8, .wireframeImg9 {
+    .wireframeImg7, .wireframeImg8, .wireframeImg9, .wireframeImg10 {
         width: 90%; 
         margin: 15px auto; 
     }
@@ -604,7 +604,7 @@ h2{
 @media (max-width: 480px) {
     .wireframeImage1, .wireframeImage2, .wireframeImage3, 
     .wireframeImage4, .wireframeImage5, .wireframeImage6, 
-    .wireframeImage7, .wireframeImage8, .wireframeImage9 {
+    .wireframeImage7, .wireframeImage8, .wireframeImage9, .wireframeImage10 {
         width: 100%; 
         margin: 10px auto; 
     }
